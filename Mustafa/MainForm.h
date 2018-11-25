@@ -1,9 +1,10 @@
 #pragma once
-#include "MorseCode.h"
-#include "NumberCode.h"
-//#include "test.h"
-#include "RSA.h"
-#include "CesarCode.h"
+//#include "MorseCode.h"
+//#include "NumberCode.h"
+////#include "test.h"
+//#include "RSA.h"
+//#include "CesarCode.h"
+#include "PageService.h"
 #include <msclr\marshal_cppstd.h>
 namespace Mustafa {
 	using namespace System;
@@ -38,14 +39,20 @@ namespace Mustafa {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  btn_MorseCode;
+
 	private: System::Windows::Forms::TextBox^  textBox_Input;
 	private: System::Windows::Forms::TextBox^  textBox_Output;
 	private: System::Windows::Forms::Button^  btn_Encrypt;
 	private: System::Windows::Forms::Button^  btn_Decrypt;
-	private: System::Windows::Forms::Button^  btn_NumberCode;
-	private: System::Windows::Forms::Button^  btn_RSA;
-	private: System::Windows::Forms::Button^  btn_CesarCode;
+	private: System::Windows::Forms::ComboBox^  comboBox_cripts;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Label^  label_InPut;
+	private: System::Windows::Forms::Label^  label_Key;
+	private: System::Windows::Forms::Label^  label_OutPut;
+	private: System::Windows::Forms::Label^  label_cripts;
+
+
+
 
 
 	protected:
@@ -63,25 +70,17 @@ namespace Mustafa {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->btn_MorseCode = (gcnew System::Windows::Forms::Button());
 			this->textBox_Input = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_Output = (gcnew System::Windows::Forms::TextBox());
 			this->btn_Encrypt = (gcnew System::Windows::Forms::Button());
 			this->btn_Decrypt = (gcnew System::Windows::Forms::Button());
-			this->btn_NumberCode = (gcnew System::Windows::Forms::Button());
-			this->btn_RSA = (gcnew System::Windows::Forms::Button());
-			this->btn_CesarCode = (gcnew System::Windows::Forms::Button());
+			this->comboBox_cripts = (gcnew System::Windows::Forms::ComboBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label_InPut = (gcnew System::Windows::Forms::Label());
+			this->label_Key = (gcnew System::Windows::Forms::Label());
+			this->label_OutPut = (gcnew System::Windows::Forms::Label());
+			this->label_cripts = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// btn_MorseCode
-			// 
-			this->btn_MorseCode->Location = System::Drawing::Point(59, 46);
-			this->btn_MorseCode->Name = L"btn_MorseCode";
-			this->btn_MorseCode->Size = System::Drawing::Size(150, 23);
-			this->btn_MorseCode->TabIndex = 0;
-			this->btn_MorseCode->Text = L"Morse Code";
-			this->btn_MorseCode->UseVisualStyleBackColor = true;
-			this->btn_MorseCode->Click += gcnew System::EventHandler(this, &MainForm::btn_MorseCode_Click);
 			// 
 			// textBox_Input
 			// 
@@ -93,7 +92,7 @@ namespace Mustafa {
 			// 
 			// textBox_Output
 			// 
-			this->textBox_Output->Location = System::Drawing::Point(588, 197);
+			this->textBox_Output->Location = System::Drawing::Point(588, 269);
 			this->textBox_Output->Multiline = true;
 			this->textBox_Output->Name = L"textBox_Output";
 			this->textBox_Output->Size = System::Drawing::Size(607, 129);
@@ -101,219 +100,157 @@ namespace Mustafa {
 			// 
 			// btn_Encrypt
 			// 
-			this->btn_Encrypt->Location = System::Drawing::Point(588, 369);
+			this->btn_Encrypt->Location = System::Drawing::Point(281, 137);
 			this->btn_Encrypt->Name = L"btn_Encrypt";
-			this->btn_Encrypt->Size = System::Drawing::Size(75, 23);
+			this->btn_Encrypt->Size = System::Drawing::Size(186, 72);
 			this->btn_Encrypt->TabIndex = 3;
-			this->btn_Encrypt->Text = L"Encrypt";
+			this->btn_Encrypt->Text = L"Шифрувати";
 			this->btn_Encrypt->UseVisualStyleBackColor = true;
 			this->btn_Encrypt->Click += gcnew System::EventHandler(this, &MainForm::btn_Encrypt_Click);
 			// 
 			// btn_Decrypt
 			// 
-			this->btn_Decrypt->Location = System::Drawing::Point(1119, 369);
+			this->btn_Decrypt->Location = System::Drawing::Point(281, 249);
 			this->btn_Decrypt->Name = L"btn_Decrypt";
-			this->btn_Decrypt->Size = System::Drawing::Size(75, 23);
+			this->btn_Decrypt->Size = System::Drawing::Size(186, 72);
 			this->btn_Decrypt->TabIndex = 4;
-			this->btn_Decrypt->Text = L"Decrypt";
+			this->btn_Decrypt->Text = L"Розшифрувати";
 			this->btn_Decrypt->UseVisualStyleBackColor = true;
 			this->btn_Decrypt->Click += gcnew System::EventHandler(this, &MainForm::btn_Decrypt_Click);
 			// 
-			// btn_NumberCode
+			// comboBox_cripts
 			// 
-			this->btn_NumberCode->Location = System::Drawing::Point(59, 86);
-			this->btn_NumberCode->Name = L"btn_NumberCode";
-			this->btn_NumberCode->Size = System::Drawing::Size(150, 23);
-			this->btn_NumberCode->TabIndex = 5;
-			this->btn_NumberCode->Text = L"Number Code";
-			this->btn_NumberCode->UseVisualStyleBackColor = true;
-			this->btn_NumberCode->Click += gcnew System::EventHandler(this, &MainForm::btn_NumberCode_Click);
+			this->comboBox_cripts->FormattingEnabled = true;
+			this->comboBox_cripts->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
+				L"Morse Code", L"Number Code", L"Cesar Code",
+					L"RSA Code", L"RSA 2.0 Code", L"Alpha Code"
+			});
+			this->comboBox_cripts->Location = System::Drawing::Point(31, 46);
+			this->comboBox_cripts->Name = L"comboBox_cripts";
+			this->comboBox_cripts->Size = System::Drawing::Size(204, 24);
+			this->comboBox_cripts->TabIndex = 5;
 			// 
-			// btn_RSA
+			// textBox1
 			// 
-			this->btn_RSA->Location = System::Drawing::Point(59, 128);
-			this->btn_RSA->Name = L"btn_RSA";
-			this->btn_RSA->Size = System::Drawing::Size(150, 23);
-			this->btn_RSA->TabIndex = 6;
-			this->btn_RSA->Text = L"RSA Code";
-			this->btn_RSA->UseVisualStyleBackColor = true;
-			this->btn_RSA->Click += gcnew System::EventHandler(this, &MainForm::btn_RSA_Click);
+			this->textBox1->Location = System::Drawing::Point(588, 212);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(607, 22);
+			this->textBox1->TabIndex = 6;
 			// 
-			// btn_CesarCode
+			// label_InPut
 			// 
-			this->btn_CesarCode->Location = System::Drawing::Point(59, 168);
-			this->btn_CesarCode->Name = L"btn_CesarCode";
-			this->btn_CesarCode->Size = System::Drawing::Size(150, 23);
-			this->btn_CesarCode->TabIndex = 7;
-			this->btn_CesarCode->Text = L"Cesar Code";
-			this->btn_CesarCode->UseVisualStyleBackColor = true;
-			this->btn_CesarCode->Click += gcnew System::EventHandler(this, &MainForm::btn_CesarCode_Click);
+			this->label_InPut->AutoSize = true;
+			this->label_InPut->Location = System::Drawing::Point(588, 23);
+			this->label_InPut->Name = L"label_InPut";
+			this->label_InPut->Size = System::Drawing::Size(39, 17);
+			this->label_InPut->TabIndex = 7;
+			this->label_InPut->Text = L"Ввід:";
+			// 
+			// label_Key
+			// 
+			this->label_Key->AutoSize = true;
+			this->label_Key->Location = System::Drawing::Point(588, 192);
+			this->label_Key->Name = L"label_Key";
+			this->label_Key->Size = System::Drawing::Size(47, 17);
+			this->label_Key->TabIndex = 8;
+			this->label_Key->Text = L"Ключ:";
+			// 
+			// label_OutPut
+			// 
+			this->label_OutPut->AutoSize = true;
+			this->label_OutPut->Location = System::Drawing::Point(588, 249);
+			this->label_OutPut->Name = L"label_OutPut";
+			this->label_OutPut->Size = System::Drawing::Size(47, 17);
+			this->label_OutPut->TabIndex = 9;
+			this->label_OutPut->Text = L"Вивід:";
+			// 
+			// label_cripts
+			// 
+			this->label_cripts->AutoSize = true;
+			this->label_cripts->Location = System::Drawing::Point(31, 23);
+			this->label_cripts->Name = L"label_cripts";
+			this->label_cripts->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->label_cripts->Size = System::Drawing::Size(54, 17);
+			this->label_cripts->TabIndex = 10;
+			this->label_cripts->Text = L"Шифри";
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1277, 446);
-			this->Controls->Add(this->btn_CesarCode);
-			this->Controls->Add(this->btn_RSA);
-			this->Controls->Add(this->btn_NumberCode);
+			this->ClientSize = System::Drawing::Size(1206, 443);
+			this->Controls->Add(this->label_cripts);
+			this->Controls->Add(this->label_OutPut);
+			this->Controls->Add(this->label_Key);
+			this->Controls->Add(this->label_InPut);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->comboBox_cripts);
 			this->Controls->Add(this->btn_Decrypt);
 			this->Controls->Add(this->btn_Encrypt);
 			this->Controls->Add(this->textBox_Output);
 			this->Controls->Add(this->textBox_Input);
-			this->Controls->Add(this->btn_MorseCode);
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->Text = L"Mustafa";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private:
-		bool IsMorse = false;
-		bool IsNumber = false;
-		bool IsRSA = false;
-		bool IsCesar = false;
-	private: System::Void btn_MorseCode_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!IsMorse)
-		{	
-			IsNumber = false;
-			IsRSA = false;
-			IsMorse = true;
-			IsCesar = false;
-			btn_CesarCode->BackColor = System::Drawing::Color::White;
-			btn_MorseCode->BackColor= System::Drawing::Color::Green;
-			btn_NumberCode->BackColor = System::Drawing::Color::White;
-			btn_RSA->BackColor = System::Drawing::Color::White;
-		}
-		else if (IsMorse)
-		{
-			IsMorse = false;
-			btn_MorseCode->BackColor = System::Drawing::Color::White;
-		}
+private: PageService service;
+private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventArgs^  e) {
+	msclr::interop::marshal_context context;
+	if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (IsMorse)_toMorse();
-		if (IsNumber)toNumber();
-		if (IsRSA)_toRSA();
-		if (IsCesar)_toCesarCode();
+	if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+	}
+	if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+	}
+	if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_RSACode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+	}
+	if (comboBox_cripts->SelectedItem->ToString() == "RSA 2.0 Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_RSA2Code(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+	}
+	if (comboBox_cripts->SelectedItem->ToString() == "Alpha Code")
+	{
+		textBox_Output->Text = gcnew String(service.Encrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
 
-	private: System::Void btn_Decrypt_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (IsMorse)_fromMorse();
-		if (IsNumber)fromNumber();
-		if (IsRSA)_fromRSA();
-		if (IsCesar)_fromCesarCode();
-	}
-	private: void _toMorse()
+}	
+private: System::Void btn_Decrypt_Click(System::Object^  sender, System::EventArgs^  e) {
+	msclr::interop::marshal_context context;
+	if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
 	{
-		MorseCode code;
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(code.Encrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: void _fromMorse()
+	if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
-		MorseCode code;
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(code.Decrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: System::Void btn_NumberCode_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!IsNumber)
-		{
-			IsRSA = false;
-			IsNumber = true;
-			IsMorse = false;
-			IsCesar = false;
-			btn_CesarCode->BackColor = System::Drawing::Color::White;
-			btn_NumberCode->BackColor = System::Drawing::Color::Green;
-			btn_MorseCode->BackColor = System::Drawing::Color::White;
-			btn_RSA->BackColor = System::Drawing::Color::White;
-		}
-		else if (IsNumber)
-		{
-			IsNumber = false;
-			btn_NumberCode->BackColor = System::Drawing::Color::White;
-		}
-	}
-	private: void fromNumber()
+	if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
-		NumberCode code;
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(code.Decrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: void toNumber()
+	if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
 	{
-		 NumberCode code;
-		 msclr::interop::marshal_context context;
-		 std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		 textBox_Output->Text = context.marshal_as<String^>(code.Encrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_RSACode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: System::Void btn_RSA_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!IsRSA)
-		{
-			IsNumber = false;
-			IsRSA = true;
-			IsMorse = false;
-			IsCesar = false;
-			btn_CesarCode->BackColor = System::Drawing::Color::White;
-			btn_RSA->BackColor = System::Drawing::Color::Green;
-			btn_MorseCode->BackColor = System::Drawing::Color::White;
-			btn_NumberCode->BackColor = System::Drawing::Color::White;
-		}
-		else if (IsRSA)
-		{
-			IsRSA = false;
-			btn_RSA->BackColor = System::Drawing::Color::White;
-		}
-	}
-	private: void _toRSA()
+	if (comboBox_cripts->SelectedItem->ToString() == "RSA 2.0 Code")
 	{
-		RSA rsa;
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(rsa.encrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_RSA2Code(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: void _fromRSA()
+	if (comboBox_cripts->SelectedItem->ToString() == "Alpha Code")
 	{
-		RSA rsa;
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(rsa.decrypt(b));
+		textBox_Output->Text = gcnew String(service.Decrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	private: System::Void btn_CesarCode_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!IsCesar)
-		{
-			IsNumber = false;
-			IsRSA = false;
-			IsMorse = false;
-			IsCesar = true;
-			btn_CesarCode->BackColor = System::Drawing::Color::Green;
-			btn_MorseCode->BackColor = System::Drawing::Color::White;
-			btn_NumberCode->BackColor = System::Drawing::Color::White;
-			btn_RSA->BackColor = System::Drawing::Color::White;
-		}
-		else if (IsCesar)
-		{
-			IsCesar = false;
-			btn_CesarCode->BackColor = System::Drawing::Color::White;
-		}
-	}
-	private: void _toCesarCode()
-	{
-		CesarCode code(4);
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(code.Encrypt(b));
-	}
-	private: void _fromCesarCode()
-	{
-		CesarCode code(4);
-		msclr::interop::marshal_context context;
-		std::string b = context.marshal_as<std::string>(textBox_Input->Text);
-		textBox_Output->Text = context.marshal_as<String^>(code.Decrypt(b));
-	}
+}
 };
 }

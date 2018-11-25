@@ -2,6 +2,7 @@
 #include"Key.h"
 #include <map>
 #include<list>
+#include<string>
 class RSA : public Key
 {
 private:
@@ -17,10 +18,9 @@ private:
 	std::vector<int> safe;
 	int T;
 	Key K;
-	bool check = false;
 	std::vector<int> Dcode;
 public:
 	RSA();
-	std::string encrypt(std::string);
-	std::string decrypt(std::string);
+	std::string Encrypt(std::string);
+	std::string Decrypt(std::string);
 };

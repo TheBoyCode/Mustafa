@@ -13,87 +13,90 @@ RSA::RSA()
 		id++;
 		trans = (char)i;
 		Table.emplace(trans, id);
+		BackTable.emplace(id, trans);
 	}
 	for (int i = 97; i <= 122; i++) {
 		id++;
 		trans = (char)i;
 		Table.emplace(trans, id);
+		BackTable.emplace(id, trans);
 	}
 	id++;
 	Table.emplace(' ', id);
-	id = 0;
-	for (int i = 65; i <= 90; i++) {
-		id++;
-		trans = (char)i;
-		BackTable.emplace(id, trans);
-	}
-	for (int i = 97; i <= 122; i++) {
-		id++;
-		trans = (char)i;
-		BackTable.emplace(id, trans);
-	}
-	id++;
 	BackTable.emplace(id, ' ');
 }
-std::string RSA::encrypt(std::string text) {
+std::string RSA::Encrypt(std::string text) {
 	Key k;
-
+	std::string Cstr, Dstr;
 
 	char tmp;
 	k.OpenKey();
-	safe.push_back(k.e);
+	safe.push_back(k.gete());
 	for (int i = 0; i < text.length(); i++) {
 		tmp = text[i];
 
 		T = Table[tmp];
 
-		C = (Pow(T, k.e)) % k.n;
+		C = (Pow(T, k.gete())) % k.getn();
 
-		ReturnCode += std::to_string(C);
-		code.push_back(C);
-		decode.push_back(T);
+		Cstr += std::to_string(C);
+		Cstr += '.';
+		Dstr += std::to_string(T);
+		Dstr += '.';
+
 
 	}
-	check = true;
+	ReturnCode += Cstr;
+	ReturnCode += '|';
+	ReturnCode += Dstr;
 	return ReturnCode;
 }
-std::string RSA::decrypt(std::string text) {
+std::string RSA::Decrypt(std::string text) {
 	Key k;
 	int s;
 	std::string tmp;
 	int R;
-	auto it = safe.begin();
-	s = *it;
-	k.CloseKey(s);
+	k.OpenKey();
+	k.CloseKey(k.gete());
 	k.Res();
-	if (check == true) {
-		for (int i = 0; i < text.length(); i++) {
 
-			C = decode[i];
-			T = (Pow(C, k.Result)) % k.n;
-			decode.push_back(T);
 
+	auto ptr = text.c_str();
+	char *endptr = nullptr;
+	char closeptr = '|';
+
+	while (*ptr != closeptr) {
+		auto value = strtol(ptr, &endptr, 10);
+		if (ptr == endptr) {
+			ptr++;
 		}
-		for (int i = 0; i < text.length(); i++) {
-			T = decode[i];
-			tmp = BackTable[T];
-			Text += tmp;
-			NewText.push_back(tmp);
+		else {
+			ptr = endptr;
+			code.push_back(value);
 		}
-
-		return Text;
 	}
-	else {
-		for (int i = 0; i < text.length(); i++) {
-			Dcode.push_back(text[i]);
-			C = Dcode[i];
-			T = (Pow(C, k.Result)) % k.n;
-			tmp = BackTable[T];
-			Text += tmp;
-			NewText.push_back(tmp);
 
+
+	for (int i = 0; i < text.length(); i++) {
+
+		auto value = strtol(ptr, &endptr, 10);
+		if (ptr == endptr) {
+			ptr++;
 		}
-		return Text;
+		else {
+			ptr = endptr;
+			decode.push_back(value);
+		}
 
 	}
+
+
+	for (int i = 0; i < decode.size(); i++) {
+
+		T = decode[i];
+		tmp = BackTable[T];
+		Text += tmp;
+		NewText.push_back(tmp);
+	}
+	return Text;
 }

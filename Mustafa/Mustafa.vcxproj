@@ -133,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlphaCode.cpp" />
     <ClCompile Include="AuthorizationForm.cpp" />
     <ClCompile Include="CesarCode.cpp" />
     <ClCompile Include="DataService.cpp" />
@@ -142,11 +143,14 @@
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="MorseCode.cpp" />
     <ClCompile Include="NumberCode.cpp" />
+    <ClCompile Include="PageService.cpp" />
     <ClCompile Include="RSA.cpp" />
+    <ClCompile Include="RSA2.0.cpp" />
     <ClCompile Include="SubstitutionCode.h" />
     <ClCompile Include="ValidateService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlphaCode.h" />
     <ClInclude Include="CesarCode.h" />
     <ClInclude Include="DataService.h" />
     <ClInclude Include="Gender.h" />
@@ -158,7 +162,9 @@
     </ClInclude>
     <ClInclude Include="MorseCode.h" />
     <ClInclude Include="NumberCode.h" />
+    <ClInclude Include="PageService.h" />
     <ClInclude Include="RSA.h" />
+    <ClInclude Include="RSA2.0.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="UserModel.h" />

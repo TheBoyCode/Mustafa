@@ -32,11 +32,11 @@ int Key::OpenKey() {
 
 	return e;
 }
-int Key::CloseKey(int e) {
+int Key::CloseKey(int E) {
 	int  arr[] = { 1,2,3,4,5,6,7,8,9 };
-
+	e = E;
 	for (int j = 0; j < 9; j++) {
-		d = (arr[j] * f + 1) / e;
+		d = (3 * f + 1) / e;
 		if (d%arr[j] == 0) {
 			I = arr[j];
 			break;
@@ -51,3 +51,7 @@ int Key::Res() {
 
 	return Result;
 }
+int Key::getn() { return n; }
+int  Key::gete() { return e; }
+int Key::getd() { return d; }
+int Key::getResult() { return Result; }
