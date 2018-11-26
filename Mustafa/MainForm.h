@@ -197,29 +197,35 @@ namespace Mustafa {
 		}
 #pragma endregion
 private: PageService service;
+		 
 private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventArgs^  e) {
+	
 	msclr::interop::marshal_context context;
-	if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
+	if (comboBox_cripts->SelectedIndex == -1) 
+	{
+		MessageBox::Show("Виберіть вид шифру");
+	}
+	else if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
+	else if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
+	else if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
+	else if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_RSACode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	if (comboBox_cripts->SelectedItem->ToString() == "RSA 2.0 Code")
+	else if (comboBox_cripts->SelectedItem->ToString() == "RSA 2.0 Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_RSA2Code(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
-	if (comboBox_cripts->SelectedItem->ToString() == "Alpha Code")
+	else if (comboBox_cripts->SelectedItem->ToString() == "Alpha Code")
 	{
 		textBox_Output->Text = gcnew String(service.Encrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}

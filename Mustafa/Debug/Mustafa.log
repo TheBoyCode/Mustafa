@@ -1,8 +1,14 @@
-﻿  RSA2.0.cpp
-c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(31): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(29): warning C4101: Result: неиспользованная локальная переменная
-c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(28): warning C4101: Inttmp: неиспользованная локальная переменная
-c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(53): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(65): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  DataService.cpp
+  LoginForm.cpp
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(208): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(216): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(224): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(232): warning C4018: <: несоответствие типов со знаком и без знака
+  MainForm.cpp
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(208): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(216): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(224): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(232): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
   AlphaCode.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Mustafa.vcxproj -> C:\Users\1\source\repos\Mustafa\Debug\Mustafa.exe

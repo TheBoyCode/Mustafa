@@ -14,6 +14,7 @@ public:
 		if (fout.is_open())
 		{
 			fout.write((char*)&user, sizeof(UserModel));
+			return true;
 		}
 		fout.close();
 		return false;

@@ -160,14 +160,19 @@ namespace Mustafa {
 			this->Text = L"LoginForm";
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
+			//
+			btn_signUp->BackColor = Color::Green;
+			btn_signIn->BackColor = Color::White;
+			btn_Ok->BackColor = Color::White;
 		}
 #pragma endregion
-	private: bool IsSignUp;
+	private: bool IsSignUp = true;
 	private: bool IsSignIn;
 	private: System::Void btn_signIn_Click(System::Object^  sender, System::EventArgs^  e) {
 		IsSignUp = false;
 		IsSignIn = true;
+		btn_signIn->BackColor = Color::Green;
+		btn_signUp->BackColor = Color::White;
 		textBox_Age->Visible = true;
 		textBox_Email->Visible = true;
 		comboBox_Gender->Visible = true;
@@ -186,7 +191,11 @@ private: System::Void btn_Ok_Click(System::Object^  sender, System::EventArgs^  
 		std::string Login = context.marshal_as<std::string>(textBox_Login->Text);
 		std::string Password = context.marshal_as<std::string>(textBox_Password->Text);
 		std::string Email = context.marshal_as<std::string>(textBox_Email->Text);
-		if (comboBox_Gender->SelectedItem->ToString() == "Male")
+		if (comboBox_Gender->SelectedIndex == -1)
+		{
+			MessageBox::Show("Виберіть гендер");
+		}
+		else if (comboBox_Gender->SelectedItem->ToString() == "Male")
 		{
 			user.Sex = 1;
 		}
@@ -226,7 +235,20 @@ private: System::Void btn_Ok_Click(System::Object^  sender, System::EventArgs^  
 			}
 			else user.Password[i] = '?';
 		}
-		service.writeToFile(user);
+		if (service.writeToFile(user))
+		{
+			IsSignUp = true;
+			IsSignIn = false;
+			textBox_Age->Visible = false;
+			textBox_Email->Visible = false;
+			comboBox_Gender->Visible = false;
+			btn_signUp->BackColor = Color::Green;
+			btn_signIn->BackColor = Color::White;
+		}
+		else
+		{
+			MessageBox::Show("Помилка регістрації");
+		}
 	}
 	if (IsSignUp)
 	{
@@ -248,7 +270,8 @@ private: System::Void btn_signUp_Click(System::Object^  sender, System::EventArg
 	textBox_Age->Visible = false;
 	textBox_Email->Visible = false;
 	comboBox_Gender->Visible = false;
-	
+	btn_signUp->BackColor = Color::Green;
+	btn_signIn->BackColor = Color::White;
 }
 };
 }
