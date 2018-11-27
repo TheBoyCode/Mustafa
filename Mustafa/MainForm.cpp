@@ -20,3 +20,10 @@ int Main(array<System::String ^> ^args)
 
 	return 0;
 }
+//int WINAPI Main(HINSTANCE, HINSTANCE, LPSTR, int)
+//{
+//	Application::EnableVisualStyles();
+//	Application::SetCompatibleTextRenderingDefault(false);
+//	Application::Run(gcnew Mustafa::LoginForm);
+//	return 0;
+//}
