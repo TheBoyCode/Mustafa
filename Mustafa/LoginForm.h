@@ -104,7 +104,7 @@ namespace Mustafa {
 			// 
 			// btn_signIn
 			// 
-			this->btn_signIn->Location = System::Drawing::Point(660, 372);
+			this->btn_signIn->Location = System::Drawing::Point(660, 373);
 			this->btn_signIn->Name = L"btn_signIn";
 			this->btn_signIn->Size = System::Drawing::Size(224, 67);
 			this->btn_signIn->TabIndex = 1;
@@ -234,7 +234,11 @@ namespace Mustafa {
 			this->Controls->Add(this->textBox_Login);
 			this->Controls->Add(this->btn_signIn);
 			this->Controls->Add(this->btn_signUp);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"LoginForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"LoginForm";
 			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
@@ -250,8 +254,6 @@ namespace Mustafa {
 		btn_signIn->Visible = false;
 		IsSignUp = false;
 		IsSignIn = true;
-		btn_signIn->BackColor = Color::Green;
-		btn_signUp->BackColor = Color::White;
 		textBox_Age->Visible = true;
 		textBox_Email->Visible = true;
 		comboBox_Gender->Visible = true;
@@ -355,8 +357,6 @@ private: System::Void btn_Ok_Click(System::Object^  sender, System::EventArgs^  
 				label_Age->Visible = false;
 				label_Email->Visible = false;
 				label_Gender->Visible = false;
-				btn_signUp->BackColor = Color::Green;
-				btn_signIn->BackColor = Color::White;
 			}
 			else
 			{
@@ -407,8 +407,6 @@ private: System::Void btn_signUp_Click(System::Object^  sender, System::EventArg
 	label_Age->Visible = false;
 	label_Email->Visible = false;
 	label_Gender->Visible = false;
-	btn_signUp->BackColor = Color::Green;
-	btn_signIn->BackColor = Color::White;
 }
 private: System::Void LoginForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	btn_signUp->Visible = false;

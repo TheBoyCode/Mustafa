@@ -191,7 +191,10 @@ namespace Mustafa {
 			this->Controls->Add(this->btn_Encrypt);
 			this->Controls->Add(this->textBox_Output);
 			this->Controls->Add(this->textBox_Input);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"MainForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Mustafa";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
