@@ -45,7 +45,8 @@ namespace Mustafa {
 	private: System::Windows::Forms::Button^  btn_Encrypt;
 	private: System::Windows::Forms::Button^  btn_Decrypt;
 	private: System::Windows::Forms::ComboBox^  comboBox_cripts;
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  textBox_Key;
+
 	private: System::Windows::Forms::Label^  label_InPut;
 	private: System::Windows::Forms::Label^  label_Key;
 	private: System::Windows::Forms::Label^  label_OutPut;
@@ -75,7 +76,7 @@ namespace Mustafa {
 			this->btn_Encrypt = (gcnew System::Windows::Forms::Button());
 			this->btn_Decrypt = (gcnew System::Windows::Forms::Button());
 			this->comboBox_cripts = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_Key = (gcnew System::Windows::Forms::TextBox());
 			this->label_InPut = (gcnew System::Windows::Forms::Label());
 			this->label_Key = (gcnew System::Windows::Forms::Label());
 			this->label_OutPut = (gcnew System::Windows::Forms::Label());
@@ -129,13 +130,14 @@ namespace Mustafa {
 			this->comboBox_cripts->Name = L"comboBox_cripts";
 			this->comboBox_cripts->Size = System::Drawing::Size(204, 24);
 			this->comboBox_cripts->TabIndex = 5;
+			this->comboBox_cripts->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::comboBox_cripts_SelectedIndexChanged);
 			// 
-			// textBox1
+			// textBox_Key
 			// 
-			this->textBox1->Location = System::Drawing::Point(588, 212);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(607, 22);
-			this->textBox1->TabIndex = 6;
+			this->textBox_Key->Location = System::Drawing::Point(588, 212);
+			this->textBox_Key->Name = L"textBox_Key";
+			this->textBox_Key->Size = System::Drawing::Size(607, 22);
+			this->textBox_Key->TabIndex = 6;
 			// 
 			// label_InPut
 			// 
@@ -183,7 +185,7 @@ namespace Mustafa {
 			this->Controls->Add(this->label_OutPut);
 			this->Controls->Add(this->label_Key);
 			this->Controls->Add(this->label_InPut);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBox_Key);
 			this->Controls->Add(this->comboBox_cripts);
 			this->Controls->Add(this->btn_Decrypt);
 			this->Controls->Add(this->btn_Encrypt);
@@ -191,6 +193,7 @@ namespace Mustafa {
 			this->Controls->Add(this->textBox_Input);
 			this->Name = L"MainForm";
 			this->Text = L"Mustafa";
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -207,11 +210,15 @@ private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventAr
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть латинські літери)");
+		else textBox_Output->Text = gcnew String(service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (ключ мусить бути числом, шифр/текст - латинськими літерами )");
+		else textBox_Output->Text = gcnew String(service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text)).c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
@@ -235,11 +242,15 @@ private: System::Void btn_Decrypt_Click(System::Object^  sender, System::EventAr
 	msclr::interop::marshal_context context;
 	if (comboBox_cripts->SelectedItem->ToString() == "Morse Code")
 	{
-		textBox_Output->Text = gcnew String(service.Decrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Decrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть '.',' ' або '-')");
+		else textBox_Output->Text = gcnew String(service.Decrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
 	if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
-		textBox_Output->Text = gcnew String(service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (ключ мусить бути числом, шифр/текст - латинськими літерами )");
+		else textBox_Output->Text = gcnew String(service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text)).c_str());
 	}
 	if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
@@ -257,6 +268,22 @@ private: System::Void btn_Decrypt_Click(System::Object^  sender, System::EventAr
 	{
 		textBox_Output->Text = gcnew String(service.Decrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
+}
+private: System::Void comboBox_cripts_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (comboBox_cripts->SelectedItem == "Cesar Code")
+	{
+		textBox_Key->Visible = true;
+		label_Key->Visible = true;
+	}
+	else
+	{
+		textBox_Key->Visible = false;
+		label_Key->Visible = false;
+	}
+}
+private: System::Void MainForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	textBox_Key->Visible = false;
+	label_Key->Visible = false;
 }
 };
 }

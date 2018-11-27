@@ -1,7 +1,7 @@
 #pragma once
-#include "MorseCode.h"
-#include"ICript.h"
-class NumberCode : public SubstitutionCode , public ICript
+//#include "MorseCode.h"
+#include "SubstitutionCode.h"
+class NumberCode : public SubstitutionCode 
 {
 public:
 	Simbol simbols[95];

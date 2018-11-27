@@ -15,7 +15,8 @@
 		std::string result = "";
 		for (int i = 0; i < text.length(); i++)
 		{
-			if (text[i] + Hook > 122)
+			if (text[i] == ' ')result += ' ';
+			else if (text[i] + Hook > 122)
 			{
 				result += 96 + (text[i] + Hook) - 122;
 			}
@@ -28,7 +29,8 @@
 		std::string result = "";
 		for (int i = 0; i < text.length(); i++)
 		{
-			if (text[i] - Hook < 97)
+			if (text[i] == ' ') result += ' ';
+			else if (text[i] - Hook < 97)
 			{
 				result += 123 - (Hook - (text[i] - 97));
 			}

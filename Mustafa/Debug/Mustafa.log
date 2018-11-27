@@ -1,31 +1,95 @@
-﻿  LoginForm.cpp
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(9): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(17): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  AlphaCode.cpp
+c:\users\1\source\repos\mustafa\mustafa\alphacode.cpp(32): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\alphacode.cpp(62): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\alphacode.cpp(77): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\alphacode.cpp(58): warning C4101: Result: неиспользованная локальная переменная
+  AuthorizationForm.cpp
+  CesarCode.cpp
+c:\users\1\source\repos\mustafa\mustafa\cesarcode.cpp(16): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\cesarcode.cpp(30): warning C4018: <: несоответствие типов со знаком и без знака
+  DataService.cpp
+  ICript.h
+  Key.cpp
+  LoginForm.cpp
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(10): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(18): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\validateservice.h(27): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(37): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(41): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(48): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(58): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(73): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(43): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(53): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(67): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(74): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\validateservice.h(84): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(99): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(110): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(290): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(298): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(306): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(314): warning C4018: <: несоответствие типов со знаком и без знака
   MainForm.cpp
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(9): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(17): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(10): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(18): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\validateservice.h(27): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(37): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(41): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(48): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(58): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\validateservice.h(73): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(43): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(53): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(67): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(74): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\validateservice.h(84): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(99): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(110): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(290): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(298): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(306): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\1\source\repos\mustafa\mustafa\loginform.h(314): warning C4018: <: несоответствие типов со знаком и без знака
+  MorseCode.cpp
+c:\users\1\source\repos\mustafa\mustafa\morsecode.cpp(95): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\morsecode.cpp(100): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\morsecode.cpp(112): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\morsecode.cpp(117): warning C4018: <: несоответствие типов со знаком и без знака
+  NumberCode.cpp
+c:\users\1\source\repos\mustafa\mustafa\numbercode.cpp(15): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\numbercode.cpp(26): warning C4018: <: несоответствие типов со знаком и без знака
+  PageService.cpp
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(10): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(18): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(27): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(43): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(53): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(67): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(74): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(84): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(99): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(110): warning C4018: <: несоответствие типов со знаком и без знака
+  RSA.cpp
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(7): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(35): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(80): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(94): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(58): warning C4101: R: неиспользованная локальная переменная
+c:\users\1\source\repos\mustafa\mustafa\rsa.cpp(56): warning C4101: s: неиспользованная локальная переменная
+  RSA2.0.cpp
+c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(31): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(29): warning C4101: Result: неиспользованная локальная переменная
+c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(28): warning C4101: Inttmp: неиспользованная локальная переменная
+c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(51): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\rsa2.0.cpp(63): warning C4018: <: несоответствие типов со знаком и без знака
+  SubstitutionCode.h
+  ValidateService.cpp
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(10): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(18): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(27): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(43): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(53): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(67): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(74): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(84): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(99): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\validateservice.h(110): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода...
+c:\users\1\source\repos\mustafa\mustafa\numbercode.cpp(49): warning C4715: NumberCode::_whatSymbol: значение возвращается не при всех путях выполнения
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
   AlphaCode.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Mustafa.vcxproj -> C:\Users\1\source\repos\Mustafa\Debug\Mustafa.exe

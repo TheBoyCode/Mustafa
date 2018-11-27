@@ -4,11 +4,37 @@ ref class ValidateService
 {
 public:
 	ValidateService();
+	bool IsKeyCesar(std::string text)
+	{
+		if (text.length() < 1)return false;
+		for (int i = 0; i < text.length(); i++)
+		{
+			if (text[i] < 48 || text[i]>57)return false;
+		}
+		return true;
+	}
 	bool isMorseCode(std::string text)
 	{
 		for (int i = 0; i < text.length(); i++)
 		{
-			if (text[i] != '.' || text[i] != '-') return false;
+			if (text[i] == '.' || text[i] == '-' || text[i] == ' ') {}
+			else return false;
+		}
+		return true;
+	}
+	bool isText(std::string text)
+	{
+		for (int i = 0; i < text.length(); i++)
+		{
+			if ((text[i] >= 97 && text[i] <= 122) || (text[i] >= 65 && text[i] <= 90) )
+			{
+
+			}
+			else if ((text[i] == 32)) 
+			{
+
+			}
+			else return false;
 		}
 		return true;
 	}

@@ -5,8 +5,11 @@
 #include"RSA.h"
 #include "RSA2.0.h"
 #include "AlphaCode.h"
+#include "ValidateService.h"
 ref class PageService
 {
+private : 
+	ValidateService service;
 public:
 	PageService();
 
@@ -14,15 +17,25 @@ public:
 	Encrypt
 	*/
 
-	std::string Encrypt_CesarCode(std::string text)
+	std::string Encrypt_CesarCode(std::string text,std::string hook)
 	{
-		CesarCode code(4);
-		return code.Encrypt(text);
+		int DigitHook;
+		if (service.IsKeyCesar(hook) && service.isToOrFromCesarCode(text))
+		{
+			DigitHook = std::stoi(hook);
+			CesarCode code(DigitHook);
+			return code.Encrypt(text);
+		}
+		return "";
 	}
 	std::string Encrypt_MorseCode(std::string text)
 	{
-		MorseCode code;
-		return code.Encrypt(text);
+		if (service.isText(text))
+		{
+			MorseCode code;
+			return code.Encrypt(text);
+		}
+		else return "";
 	}
 	std::string Encrypt_NumberCode(std::string text)
 	{
@@ -49,15 +62,25 @@ public:
 	Decrypt
 	*/
 
-	std::string Decrypt_CesarCode(std::string text)
+	std::string Decrypt_CesarCode(std::string text,std::string hook)
 	{
-		CesarCode code(4);
-		return code.Decrypt(text);
+		int DigitHook;
+		if (service.IsKeyCesar(hook) && service.isToOrFromCesarCode(text))
+		{
+			DigitHook = std::stoi(hook);
+			CesarCode code(DigitHook);
+			return code.Decrypt(text);
+		}
+		return "";
 	}
 	std::string Decrypt_MorseCode(std::string text)
 	{
-		MorseCode code;
-		return code.Decrypt(text);
+		if (service.isMorseCode(text))
+		{
+			MorseCode code;
+			return code.Decrypt(text);
+		}
+		else return "";
 	}
 	std::string Decrypt_NumberCode(std::string text)
 	{

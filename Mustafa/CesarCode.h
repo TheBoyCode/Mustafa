@@ -1,6 +1,7 @@
 #pragma once
-#include "MorseCode.h"
-class CesarCode : public  SubstitutionCode 
+//#include "MorseCode.h"
+#include "SubstitutionCode.h"
+class CesarCode : public  SubstitutionCode
 {
 public:
 	Simbol simbols[26];

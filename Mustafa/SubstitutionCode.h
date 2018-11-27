@@ -1,7 +1,9 @@
-#include <string>
-//#include "ICript.cpp"
+//#include <string>
 
-class SubstitutionCode 
+#ifndef SUBST
+#define SUBST
+#include "ICript.h"
+class SubstitutionCode : public ICript
 {
 public:
 	struct Simbol
@@ -10,3 +12,4 @@ public:
 		std::string symbol;
 	};
 };
+#endif
