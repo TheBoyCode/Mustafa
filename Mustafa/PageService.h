@@ -44,18 +44,31 @@ public:
 	}
 	std::string Encrypt_RSACode(std::string text)
 	{
-		RSA code;
-		return code.Encrypt(text);
+		if (service.isText(text))
+		{
+			RSA code;
+			return code.Encrypt(text);
+		}
+		else return "";
+		
 	}
 	std::string Encrypt_RSA2Code(std::string text)
 	{
-		RSA2_0 code;
-		return code.Encrypt(text);
+		if (service.isText(text))
+		{
+			RSA2_0 code;
+			return code.Encrypt(text);
+		}
+		else return "";
 	}
 	std::string Encrypt_AlphaCode(std::string text)
 	{
-		AlphaCode code;
-		return code.Encrypt(text);
+		if (service.isText(text))
+		{
+			AlphaCode code;
+			return code.Encrypt(text);
+		}
+		else return "";
 	}
 
 	/**
@@ -84,23 +97,40 @@ public:
 	}
 	std::string Decrypt_NumberCode(std::string text)
 	{
-		NumberCode code;
-		return code.Decrypt(text);
+		if (service.isNumberCode(text))
+		{
+			NumberCode code;
+			return code.Decrypt(text);
+		}
+		else return "";
 	}
 	std::string Decrypt_RSACode(std::string text)
 	{
-		RSA code;
-		return code.Decrypt(text);
+		if (service.isRsa(text))
+		{
+			RSA code;
+			return code.Decrypt(text);
+		}
+		else return "";
+		
 	}
 	std::string Decrypt_RSA2Code(std::string text)
 	{
-		RSA2_0 code;
-		return code.Decrypt(text);
+		if(service.isRsa(text))
+		{
+			RSA2_0 code;
+			return code.Decrypt(text);
+		}
+		else return "";
 	}
 	std::string Decrypt_AlphaCode(std::string text)
 	{
-		AlphaCode code;
-		return code.Decrypt(text);
+		if (service.isText(text))
+		{
+			AlphaCode code;
+			return code.Decrypt(text);
+		}
+		else return "";
 	}
 	
 };

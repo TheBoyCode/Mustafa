@@ -35,7 +35,7 @@ std::string AlphaCode::Encrypt(std::string text) {
 		Inttmp = Text[tmp];
 		if (Inttmp == 53) {
 			Result = Text[53];
-			ReturnCode += BackText[Result];
+			ReturnCode += BackText[53];
 		}
 		else {
 			Result = Inttmp + k.gete();
@@ -65,7 +65,7 @@ std::string AlphaCode::Decrypt(std::string code) {
 		Inttmp = Text[strtmp];
 		if (Inttmp == 53) {
 			value = Text[53];
-			decode.push_back(value);
+			decode.push_back(53);
 		}
 		else {
 			value = Inttmp - okey;

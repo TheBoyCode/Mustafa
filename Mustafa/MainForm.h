@@ -212,13 +212,13 @@ private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventAr
 	{
 		std::string decode = service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text));
 		if (decode == "")MessageBox::Show("Не коректне введення (введіть латинські літери)");
-		else textBox_Output->Text = gcnew String(service.Encrypt_MorseCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
 		std::string decode = service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text));
 		if (decode == "")MessageBox::Show("Не коректне введення (ключ мусить бути числом, шифр/текст - латинськими літерами )");
-		else textBox_Output->Text = gcnew String(service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text)).c_str());
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
@@ -226,15 +226,21 @@ private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventAr
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_RSACode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Encrypt_RSACode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть латинські літери)");
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "RSA 2.0 Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_RSA2Code(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Encrypt_RSA2Code(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть латинські літери)");
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Alpha Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Encrypt_AlphaCode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть латинські літери)");
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 
 }	
@@ -254,7 +260,9 @@ private: System::Void btn_Decrypt_Click(System::Object^  sender, System::EventAr
 	}
 	if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
-		textBox_Output->Text = gcnew String(service.Decrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Decrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введіть цифри)");
+		else textBox_Output->Text = gcnew String(service.Decrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
 	}
 	if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
 	{
