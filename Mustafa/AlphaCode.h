@@ -3,13 +3,12 @@
 #include <map>
 #include<list>
 #include<string>
-
-class AlphaCode
+#include "CodeWithKey.h"
+class AlphaCode:public CodeWithKey
 {
 private:
 	std::map<char, int > Text;
 	std::map<int, char > BackText;
-	int id = 0;
 	std::string ReturnCode;
 	std::string ReturnText;
 	std::vector<int>decode;

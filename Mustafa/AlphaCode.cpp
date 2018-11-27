@@ -2,6 +2,7 @@
 
 AlphaCode::AlphaCode()
 {
+	id = 0;
 	char trans;
 	for (int i = 65; i <= 90; i++) {
 		id++;
@@ -18,12 +19,9 @@ AlphaCode::AlphaCode()
 	id++;
 	Text.emplace(' ', id);
 	BackText.emplace(id, ' ');
-
-
 }
 
 std::string AlphaCode::Encrypt(std::string text) {
-	Key k;
 	k.OpenKey();
 	char tmp;
 	int Inttmp;
@@ -51,7 +49,6 @@ std::string AlphaCode::Encrypt(std::string text) {
 
 
 std::string AlphaCode::Decrypt(std::string code) {
-	Key k;
 	std::string tmp;
 	k.OpenKey();
 	int Inttmp;
@@ -71,7 +68,6 @@ std::string AlphaCode::Decrypt(std::string code) {
 			value = Inttmp - okey;
 			decode.push_back(value);
 		}
-
 	}
 	Inttmp = 0;
 	for (int i = 0; i < decode.size(); i++) {
@@ -79,7 +75,6 @@ std::string AlphaCode::Decrypt(std::string code) {
 		Inttmp = decode[i];
 		tmp = BackText[Inttmp];
 		ReturnText += tmp;
-
 	}
 	return ReturnText;
 }

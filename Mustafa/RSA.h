@@ -3,10 +3,10 @@
 #include <map>
 #include<list>
 #include<string>
-class RSA : public Key
+#include"CodeWithKey.h"
+class RSA :public CodeWithKey
 {
 private:
-	int id = 0;
 	long int C;
 	std::vector<int> code;
 	std::vector<int>decode;
@@ -17,7 +17,6 @@ private:
 	std::string Text;
 	std::vector<int> safe;
 	int T;
-	Key K;
 	std::vector<int> Dcode;
 public:
 	RSA();

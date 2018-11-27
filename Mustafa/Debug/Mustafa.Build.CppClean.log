@@ -1,7 +1,9 @@
 c:\users\1\source\repos\mustafa\mustafa\debug\vc141.pdb
 c:\users\1\source\repos\mustafa\mustafa\debug\validateservice.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\substitutioncode.obj
+c:\users\1\source\repos\mustafa\mustafa\debug\rsa2.0.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\rsa.obj
+c:\users\1\source\repos\mustafa\mustafa\debug\pageservice.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\numbercode.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\morsecode.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\mainform.obj
@@ -9,10 +11,8 @@ c:\users\1\source\repos\mustafa\mustafa\debug\loginform.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\key.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\icript.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\dataservice.obj
+c:\users\1\source\repos\mustafa\mustafa\debug\codewithkey.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\cesarcode.obj
-c:\users\1\source\repos\mustafa\mustafa\debug\authorizationform.obj
-c:\users\1\source\repos\mustafa\mustafa\debug\rsa2.0.obj
-c:\users\1\source\repos\mustafa\mustafa\debug\pageservice.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\alphacode.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\.netframework,version=v4.6.1.assemblyattributes.obj
 c:\users\1\source\repos\mustafa\mustafa\debug\.netframework,version=v4.6.1.assemblyattributes.asm
@@ -21,7 +21,6 @@ c:\users\1\source\repos\mustafa\debug\mustafa.pdb
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.loginform.resources
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.mainform.resources
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.vcxproj.generateresource.cache
-c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.vcxprojassemblyreference.cache
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.tlog\cl.command.1.tlog
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.tlog\cl.read.1.tlog
 c:\users\1\source\repos\mustafa\mustafa\debug\mustafa.tlog\cl.write.1.tlog

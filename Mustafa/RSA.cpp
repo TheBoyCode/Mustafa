@@ -8,6 +8,7 @@ int Pow(int a, int b) {
 }
 RSA::RSA()
 {
+	id = 0;
 	char trans;
 	for (int i = 65; i <= 90; i++) {
 		id++;
@@ -26,7 +27,6 @@ RSA::RSA()
 	BackTable.emplace(id, ' ');
 }
 std::string RSA::Encrypt(std::string text) {
-	Key k;
 	std::string Cstr, Dstr;
 
 	char tmp;
@@ -43,8 +43,6 @@ std::string RSA::Encrypt(std::string text) {
 		Cstr += '.';
 		Dstr += std::to_string(T);
 		Dstr += '.';
-
-
 	}
 	ReturnCode += Cstr;
 	ReturnCode += '|';
@@ -52,15 +50,12 @@ std::string RSA::Encrypt(std::string text) {
 	return ReturnCode;
 }
 std::string RSA::Decrypt(std::string text) {
-	Key k;
 	int s;
 	std::string tmp;
 	int R;
 	k.OpenKey();
 	k.CloseKey(k.gete());
 	k.Res();
-
-
 	auto ptr = text.c_str();
 	char *endptr = nullptr;
 	char closeptr = '|';
@@ -75,8 +70,6 @@ std::string RSA::Decrypt(std::string text) {
 			code.push_back(value);
 		}
 	}
-
-
 	for (int i = 0; i < text.length(); i++) {
 
 		auto value = strtol(ptr, &endptr, 10);
@@ -87,12 +80,8 @@ std::string RSA::Decrypt(std::string text) {
 			ptr = endptr;
 			decode.push_back(value);
 		}
-
 	}
-
-
 	for (int i = 0; i < decode.size(); i++) {
-
 		T = decode[i];
 		tmp = BackTable[T];
 		Text += tmp;

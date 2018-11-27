@@ -3,7 +3,6 @@
 #include <cmath> 
 #include <vector>
 
-
 class Key {
 protected:
 	int p = 7, q = 13;

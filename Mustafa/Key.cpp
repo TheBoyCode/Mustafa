@@ -19,17 +19,13 @@ Key::Key() {
 int Key::OpenKey() {
 	int i = 2;
 	do {
-
 		e = NOD(f);
-
 		if (e%i == 0 && e < f) {
 			if (e % 2 == 0) { e++; }
 			break;
-
 		}
 		i++;
 	} while (i <= (sqrt(abs(e))));
-
 	return e;
 }
 int Key::CloseKey(int E) {
@@ -40,10 +36,8 @@ int Key::CloseKey(int E) {
 		if (d%arr[j] == 0) {
 			I = arr[j];
 			break;
-
 		}
 	}
-
 	return d;
 }
 int Key::Res() {

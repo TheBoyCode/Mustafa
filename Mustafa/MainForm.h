@@ -216,13 +216,15 @@ private: System::Void btn_Encrypt_Click(System::Object^  sender, System::EventAr
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Cesar Code")
 	{
-		std::string decode = service.Decrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text));
+		std::string decode = service.Encrypt_CesarCode(context.marshal_as<std::string>(textBox_Input->Text), context.marshal_as<std::string>(textBox_Key->Text));
 		if (decode == "")MessageBox::Show("Не коректне введення (ключ мусить бути числом, шифр/текст - латинськими літерами )");
 		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "Number Code")
 	{
-		textBox_Output->Text = gcnew String(service.Encrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text)).c_str());
+		std::string decode = service.Encrypt_NumberCode(context.marshal_as<std::string>(textBox_Input->Text));
+		if (decode == "")MessageBox::Show("Не коректне введення (введыть текст - латинськими літерами /цифрами / знаками )");
+		else textBox_Output->Text = gcnew String(decode.c_str());
 	}
 	else if (comboBox_cripts->SelectedItem->ToString() == "RSA Code")
 	{

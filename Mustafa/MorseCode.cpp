@@ -85,11 +85,11 @@ MorseCode::MorseCode()
 	simbols[30].symbol = "..--..";
 	simbols[31].letter = ' ';
 	simbols[31].symbol = " ";
-
 }
 
 std::string   MorseCode::Encrypt(std::string text)
 {
+	std::transform(text.begin(), text.end(), text.begin(), ::tolower);
 	std::string encrypt = "";
 	int countToLetter = 0;
 	for (int i = 0; i < text.length(); i++)

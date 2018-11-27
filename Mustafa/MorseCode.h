@@ -1,6 +1,6 @@
 #pragma once
 #include "SubstitutionCode.h"
-
+#include <algorithm>
 class MorseCode : public SubstitutionCode
 {
 private:
@@ -9,7 +9,6 @@ private:
 	char _whatLetter(std::string symbol);
 public:
 	MorseCode();
-
 	std::string  Encrypt(std::string text);
 	std::string  Decrypt(std::string text);
 };

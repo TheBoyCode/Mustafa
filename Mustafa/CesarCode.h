@@ -1,5 +1,4 @@
 #pragma once
-//#include "MorseCode.h"
 #include "SubstitutionCode.h"
 class CesarCode : public  SubstitutionCode
 {

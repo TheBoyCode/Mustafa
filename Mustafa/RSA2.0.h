@@ -3,11 +3,10 @@
 #include <map>
 #include<list>
 #include<string>
-
-class RSA2_0
+#include "CodeWithKey.h"
+class RSA2_0: public CodeWithKey
 {
 private:
-	int id = 0;
 	int C;
 	std::vector<int> decode;
 	std::map<char, int > Table;
@@ -16,7 +15,6 @@ private:
 	std::string ReturnText;
 	std::vector<int> safe;
 	int T;
-	Key k;
 public:
 	RSA2_0();
 	std::string Encrypt(std::string);
