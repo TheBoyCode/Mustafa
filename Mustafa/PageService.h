@@ -6,11 +6,13 @@
 #include "RSA2.0.h"
 #include "AlphaCode.h"
 #include "ValidateService.h"
+#include"DataSingleton.h"
 ref class PageService
 {
 private : 
 	ValidateService service;
 public:
+	std::string GetLogin();
 	PageService();
 	std::string Encrypt_CesarCode(std::string text, std::string hook);
 	std::string Encrypt_MorseCode(std::string text);

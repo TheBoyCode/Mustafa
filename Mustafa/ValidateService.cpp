@@ -110,6 +110,7 @@ std::string ValidateService::IsEmail(std::string email)
 std::string ValidateService::IsAge(std::string age)
 {
 	if (age.length() < 1)return "Введіть число";
+	if (age.length() > 3)return "Завелике число";
 	for (int i = 0; i < age.length(); i++)
 	{
 		if (age[i] < 48 || age[i]>57)return "Введіть число";

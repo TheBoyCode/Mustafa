@@ -137,6 +137,7 @@
     <ClCompile Include="CesarCode.cpp" />
     <ClCompile Include="CodeWithKey.cpp" />
     <ClCompile Include="DataService.cpp" />
+    <ClCompile Include="DataSingleton.cpp" />
     <ClCompile Include="ICript.h" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="LoginForm.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="RSA.cpp" />
     <ClCompile Include="RSA2.0.cpp" />
     <ClCompile Include="SubstitutionCode.h" />
+    <ClCompile Include="UserModel.cpp" />
     <ClCompile Include="ValidateService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,7 @@
     <ClInclude Include="CesarCode.h" />
     <ClInclude Include="CodeWithKey.h" />
     <ClInclude Include="DataService.h" />
+    <ClInclude Include="DataSingleton.h" />
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

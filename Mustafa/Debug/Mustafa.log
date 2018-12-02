@@ -1,13 +1,13 @@
 ﻿  LoginForm.cpp
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(292): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(300): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(308): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(316): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(291): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(299): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(307): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(315): warning C4018: <: несоответствие типов со знаком и без знака
   MainForm.cpp
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(292): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(300): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(308): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\1\source\repos\mustafa\mustafa\loginform.h(316): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(291): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(299): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(307): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\1\source\repos\mustafa\mustafa\loginform.h(315): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода...
   AlphaCode.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Mustafa.vcxproj -> C:\Users\1\source\repos\Mustafa\Debug\Mustafa.exe

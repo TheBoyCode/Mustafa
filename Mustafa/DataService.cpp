@@ -16,7 +16,7 @@ bool DataService::writeToFile(UserModel user)
 	fout.close();
 	return false;
 }
-bool DataService::IsHere(std::string Login, std::string Pas)
+UserModel DataService::IsHere(std::string Login, std::string Pas)
 {
 	std::ifstream fin;
 	std::string path = "users.txt";
@@ -43,9 +43,15 @@ bool DataService::IsHere(std::string Login, std::string Pas)
 			{
 				if (user.Password[i] != Pas[i])normal = false;
 			}
-			if (normal)return true;
+			if (normal)return user;
 		}
 		fin.close();
 	}
-	return false;
+	UserModel defoult;
+	return defoult;
+}
+void DataService::WriteToSingleton(UserModel user)
+{
+	DataSingleton& instance = DataSingleton::Instance();
+	instance.SetUser(user);
 }

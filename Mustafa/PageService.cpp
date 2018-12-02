@@ -5,7 +5,19 @@
 PageService::PageService()
 {
 }
-
+std::string PageService::GetLogin()
+{
+	DataSingleton& instance = DataSingleton::Instance();
+	std::string login = "";
+	for (int i = 0; i < 20; i++)
+	{
+		if (instance.GetUser().Login[i] != '?')
+		{
+			login += instance.GetUser().Login[i];
+		}
+	}
+	return login;
+}
 std::string PageService::Encrypt_CesarCode(std::string text, std::string hook)
 {
 	int DigitHook;

@@ -2,7 +2,6 @@
 #include "MainForm.h"
 #include "DataService.h"
 #include "ValidateService.h"
-//#include "UserModel.h"
 #include <msclr\marshal_cppstd.h>
 
 namespace Mustafa {
@@ -382,8 +381,11 @@ private: System::Void btn_Ok_Click(System::Object^  sender, System::EventArgs^  
 		}
 		if (isUser)
 		{
-			if (service.IsHere(_login, _password))
+			UserModel user;
+			user = service.IsHere(_login, _password);
+			if (user.Login[0]!='?')
 			{
+				service.WriteToSingleton(user);
 				MainForm^ f = gcnew MainForm();
 				f->Show();
 				this->Hide();
@@ -395,6 +397,7 @@ private: System::Void btn_Ok_Click(System::Object^  sender, System::EventArgs^  
 		}
 	}
 }
+
 private: System::Void btn_signUp_Click(System::Object^  sender, System::EventArgs^  e) {
 	label_LogReg->Text = "Óâ³éä³òü";
 	btn_signUp->Visible = false;

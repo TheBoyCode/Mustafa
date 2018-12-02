@@ -2,7 +2,7 @@
 class UserModel
 {
 public:
-	//UserModel();
+	UserModel();
 	char Email [30];
 	char Login [20];
 	char Password [10];
