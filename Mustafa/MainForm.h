@@ -54,7 +54,7 @@ namespace Mustafa {
 	private: System::Windows::Forms::Label^  label_OutPut;
 	private: System::Windows::Forms::Label^  label_cripts;
 	private: System::Windows::Forms::Label^  label_EnterLike;
-	private: System::Windows::Forms::Button^  bет_Exit;
+
 
 
 
@@ -86,7 +86,6 @@ namespace Mustafa {
 			this->label_OutPut = (gcnew System::Windows::Forms::Label());
 			this->label_cripts = (gcnew System::Windows::Forms::Label());
 			this->label_EnterLike = (gcnew System::Windows::Forms::Label());
-			this->bет_Exit = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// textBox_Input
@@ -175,7 +174,7 @@ namespace Mustafa {
 			// label_cripts
 			// 
 			this->label_cripts->AutoSize = true;
-			this->label_cripts->Location = System::Drawing::Point(12, 117);
+			this->label_cripts->Location = System::Drawing::Point(12, 103);
 			this->label_cripts->Name = L"label_cripts";
 			this->label_cripts->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->label_cripts->Size = System::Drawing::Size(54, 17);
@@ -191,22 +190,11 @@ namespace Mustafa {
 			this->label_EnterLike->TabIndex = 11;
 			this->label_EnterLike->Text = L"Ви увійшли як ";
 			// 
-			// bет_Exit
-			// 
-			this->bет_Exit->Location = System::Drawing::Point(41, 33);
-			this->bет_Exit->Name = L"bет_Exit";
-			this->bет_Exit->Size = System::Drawing::Size(75, 23);
-			this->bет_Exit->TabIndex = 12;
-			this->bет_Exit->Text = L"Вийти";
-			this->bет_Exit->UseVisualStyleBackColor = true;
-			this->bет_Exit->Click += gcnew System::EventHandler(this, &MainForm::bет_Exit_Click);
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1206, 443);
-			this->Controls->Add(this->bет_Exit);
 			this->Controls->Add(this->label_EnterLike);
 			this->Controls->Add(this->label_cripts);
 			this->Controls->Add(this->label_OutPut);
@@ -325,9 +313,6 @@ private: System::Void MainForm_Load(System::Object^  sender, System::EventArgs^ 
 	textBox_Key->Visible = false;
 	label_Key->Visible = false;
 	label_EnterLike->Text += gcnew String(service.GetLogin().c_str());
-}
-private: System::Void bет_Exit_Click(System::Object^  sender, System::EventArgs^  e) {
-
 }
 };
 }
